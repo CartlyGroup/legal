@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — Cartly</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #F2F2F7;
+      color: #1C1C1E;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    a { color: #F5A833; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #E5E5EA;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 20px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px; }
+    .logo span { color: #F5A833; }
+    .lang-switch {
+      margin-left: auto;
+      font-size: 13px;
+      color: #8E8E93;
+      border: 1px solid #E5E5EA;
+      border-radius: 20px;
+      padding: 4px 12px;
+    }
+    .wrapper { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+    .doc-header { margin-bottom: 32px; }
+    .doc-badge {
+      display: inline-block;
+      background: #FFF0EC;
+      color: #F5A833;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+    .doc-title { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .doc-subtitle { font-size: 13px; color: #8E8E93; }
+    .intro-card {
+      background: #fff;
+      border: 1px solid #E5E5EA;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .intro-card .label {
+      font-size: 11px; font-weight: 700; color: #8E8E93;
+      letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 10px;
+    }
+    .intro-card p { color: #3C3C43; font-size: 14px; line-height: 1.65; }
+    .intro-card p + p { margin-top: 10px; }
+    .section {
+      background: #fff;
+      border: 1px solid #E5E5EA;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 11px; font-weight: 700; color: #F5A833;
+      letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .section-divider { height: 1px; background: #E5E5EA; margin-bottom: 18px; }
+    .clause { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
+    .clause-num { font-size: 11px; font-weight: 700; color: #F5A833; min-width: 32px; padding-top: 2px; flex-shrink: 0; }
+    .clause-text { font-size: 14px; color: #3C3C43; line-height: 1.65; }
+    h3.sub { font-size: 13px; font-weight: 700; color: #1C1C1E; margin: 14px 0 8px; }
+    ul.list { list-style: none; padding-left: 0; margin-bottom: 10px; }
+    ul.list li {
+      font-size: 14px; color: #3C3C43; line-height: 1.6;
+      padding: 4px 0 4px 20px; position: relative;
+    }
+    ul.list li::before {
+      content: ''; position: absolute; left: 6px; top: 12px;
+      width: 6px; height: 6px; background: #F5A833; border-radius: 50%;
+    }
+    .note {
+      background: #FFF7ED; border-radius: 10px;
+      padding: 12px 14px; margin: 10px 0;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .note-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .note p { font-size: 13px; color: #1C1C1E; line-height: 1.55; }
+    table.third-party {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px; margin-top: 10px;
+    }
+    table.third-party th {
+      background: #F2F2F7; text-align: left;
+      padding: 10px 12px; font-weight: 700; color: #3C3C43;
+      border-bottom: 1px solid #E5E5EA;
+    }
+    table.third-party td {
+      padding: 10px 12px; color: #3C3C43;
+      border-bottom: 1px solid #F2F2F7; vertical-align: top;
+    }
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .right-card { background: #F2F2F7; border-radius: 10px; padding: 14px; }
+    .right-card .right-title { font-size: 13px; font-weight: 700; color: #1C1C1E; margin-bottom: 4px; }
+    .right-card p { font-size: 12px; color: #3C3C43; line-height: 1.5; }
+    .contact-card {
+      background: #fff; border: 1px solid #E5E5EA;
+      border-radius: 16px; padding: 32px 24px;
+      text-align: center; margin-top: 8px;
+    }
+    .contact-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .contact-card p { font-size: 14px; color: #8E8E93; line-height: 1.6; }
+    .site-footer {
+      text-align: center; padding: 24px;
+      font-size: 12px; color: #8E8E93;
+      border-top: 1px solid #E5E5EA;
+    }
+    @media (max-width: 600px) {
+      .doc-title { font-size: 22px; }
+      .section { padding: 18px; }
+      .rights-grid { grid-template-columns: 1fr; }
+      table.third-party { font-size: 12px; }
+      table.third-party th, table.third-party td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Cart<span>ly</span></div>
+  <a href="politique-confidentialite-en.html" class="lang-switch">English</a>
+</header>
+
+<div class="wrapper">
+
+  <div class="doc-header">
+    <div class="doc-badge">Mis à jour : 9 juin 2026</div>
+    <h1 class="doc-title">Politique de confidentialité</h1>
+    <p class="doc-subtitle">Application mobile Cartly — Conforme à la Loi 25 sur la protection des renseignements personnels (Québec)</p>
+  </div>
+
+  <div class="intro-card">
+    <div class="label">Déclaration de confidentialité</div>
+    <p>La présente Politique de confidentialité (ci-après la « Politique ») décrit les pratiques de Cartly (ci-après le « Prestataire ») en matière de collecte, d'utilisation, de communication et de conservation des renseignements personnels des utilisateurs de l'Application mobile Cartly (ci-après l'« Application »).</p>
+    <p>Le Prestataire s'engage à protéger les renseignements personnels conformément à la <strong>Loi 25 sur la protection des renseignements personnels dans le secteur privé du Québec</strong> et aux lois fédérales applicables, notamment la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE).</p>
+    <p>En utilisant l'Application, Vous consentez aux pratiques décrites dans la présente Politique.</p>
+  </div>
+
+  <!-- Article 1 -->
+  <div class="section">
+    <div class="section-title">1. Identité du responsable du traitement</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">1.1</span><span class="clause-text">Le responsable du traitement des renseignements personnels est Cartly, exploitant l'Application depuis le Québec, Canada.</span></div>
+    <div class="clause"><span class="clause-num">1.2</span><span class="clause-text">Pour toute question relative à la confidentialité ou pour exercer vos droits, veuillez contacter le responsable de la protection des renseignements personnels à : <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>.</span></div>
+  </div>
+
+  <!-- Article 2 -->
+  <div class="section">
+    <div class="section-title">2. Renseignements collectés</div>
+    <div class="section-divider"></div>
+    <h3 class="sub">2.1 Renseignements de compte (fournis par l'Utilisateur)</h3>
+    <ul class="list">
+      <li>Adresse courriel (obligatoire pour l'authentification)</li>
+      <li>Prénom et nom de famille</li>
+      <li>Photo de profil (optionnelle — stockée dans nos systèmes sécurisés)</li>
+      <li>Avatar emoji (optionnel)</li>
+    </ul>
+    <h3 class="sub">2.2 Informations de localisation (saisies par l'Utilisateur)</h3>
+    <ul class="list">
+      <li>Adresse de départ saisie manuellement</li>
+      <li>Coordonnées GPS (latitude/longitude) associées à cette adresse</li>
+      <li>Rayon de recherche défini par l'Utilisateur (entre 1 et 7 km)</li>
+    </ul>
+    <div class="note"><span class="note-icon">ℹ️</span><p><strong>Important :</strong> Cartly ne collecte pas la position GPS de l'Utilisateur en temps réel ou en arrière-plan. L'adresse utilisée est exclusivement celle que l'Utilisateur saisit manuellement dans les réglages.</p></div>
+    <h3 class="sub">2.3 Données d'utilisation</h3>
+    <ul class="list">
+      <li>Listes d'achats créées (articles, variantes, sessions)</li>
+      <li>Historique de magasinage</li>
+      <li>Épiceries sélectionnées et leur statut actif/inactif</li>
+      <li>Statut du compte (essai, gratuit, premium)</li>
+      <li>Nombre d'essais gratuits utilisés (à des fins d'anti-abus)</li>
+    </ul>
+    <h3 class="sub">2.4 Renseignements non collectés</h3>
+    <ul class="list">
+      <li>Position GPS en temps réel ou en arrière-plan</li>
+      <li>Contacts téléphoniques</li>
+      <li>Données de navigation à des fins publicitaires comportementales</li>
+      <li>Informations de carte de crédit ou de paiement (traitées exclusivement par Apple App Store ou Google Play Store)</li>
+      <li>Données de santé ou biométriques</li>
+    </ul>
+  </div>
+
+  <!-- Article 3 -->
+  <div class="section">
+    <div class="section-title">3. Finalités du traitement</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">3.1</span><span class="clause-text">Les renseignements personnels sont collectés et utilisés aux fins suivantes :</span></div>
+    <ul class="list">
+      <li><strong>Fourniture du service :</strong> afficher les épiceries à proximité, générer et sauvegarder les listes d'achats de l'Utilisateur.</li>
+      <li><strong>Authentification :</strong> vérifier l'identité de l'Utilisateur et sécuriser l'accès au compte.</li>
+      <li><strong>Personnalisation :</strong> afficher le nom, la photo de profil et les préférences de l'Utilisateur.</li>
+      <li><strong>Normalisation des données de produits :</strong> améliorer la qualité et la cohérence des données d'épiceries affichées dans l'Application à l'aide de services d'intelligence artificielle (voir section 4.1).</li>
+      <li><strong>Communications de service :</strong> envoyer des notifications liées au service (si activées par l'Utilisateur).</li>
+      <li><strong>Prévention des abus :</strong> s'assurer que les essais gratuits ne sont pas utilisés de manière frauduleuse.</li>
+      <li><strong>Amélioration de l'Application :</strong> analyser l'utilisation pour améliorer les fonctionnalités existantes.</li>
+    </ul>
+    <div class="note"><span class="note-icon">ℹ️</span><p>Le Prestataire n'utilise jamais les renseignements personnels à des fins publicitaires tierces et ne les vend, ne les loue ni ne les cède à des tiers à des fins commerciales.</p></div>
+  </div>
+
+  <!-- Article 4 -->
+  <div class="section">
+    <div class="section-title">4. Communication des renseignements à des tiers</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">4.1</span><span class="clause-text">Le Prestataire ne communique les renseignements personnels qu'aux tiers suivants, dans la mesure nécessaire à la fourniture du service :</span></div>
+    <table class="third-party">
+      <thead>
+        <tr><th>Tiers</th><th>Finalité</th><th>Données transmises</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Supabase</strong></td><td>Authentification, stockage des données, hébergement de fichiers</td><td>Compte, listes, coordonnées GPS</td></tr>
+        <tr><td><strong>Google Maps Platform</strong></td><td>Recherche d'adresses et détection des épiceries à proximité</td><td>Adresse saisie, coordonnées GPS</td></tr>
+        <tr><td><strong>Apple App Store / Google Play</strong></td><td>Traitement des paiements de l'abonnement Premium</td><td>Information gérée directement par le Fournisseur</td></tr>
+        <tr><td><strong>OpenAI (API)</strong></td><td>Normalisation et catégorisation automatisée des données de produits d'épicerie</td><td>Données de produits anonymisées (noms, descriptions, catégories) — aucune donnée d'identification de l'Utilisateur</td></tr>
+        <tr><td><strong>Anthropic (API)</strong></td><td>Normalisation et catégorisation automatisée des données de produits d'épicerie</td><td>Données de produits anonymisées (noms, descriptions, catégories) — aucune donnée d'identification de l'Utilisateur</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top: 14px;"><span class="note-icon">⚠️</span><p><strong>Important :</strong> Les données transmises aux services d'intelligence artificielle (OpenAI, Anthropic) sont strictement limitées aux données de produits d'épicerie. Aucun renseignement personnel identifiable de l'Utilisateur (nom, courriel, adresse, listes personnelles) n'est transmis à ces services.</p></div>
+    <div class="clause" style="margin-top: 14px;"><span class="clause-num">4.2</span><span class="clause-text">En dehors des tiers mentionnés au tableau ci-dessus, le Prestataire peut être amené à communiquer des renseignements personnels : (a) en réponse à une ordonnance judiciaire ou une demande légale valide ; (b) pour protéger la sécurité d'un Utilisateur ou du public ; (c) en cas de fusion, acquisition ou réorganisation d'entreprise, auquel cas l'Utilisateur en sera informé au préalable.</span></div>
+  </div>
+
+  <!-- Article 5 -->
+  <div class="section">
+    <div class="section-title">5. Traitement automatisé</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">5.1</span><span class="clause-text">L'Application utilise des algorithmes automatisés pour comparer les prix d'épiceries et générer des suggestions de listes d'achats. Ce traitement automatisé vise exclusivement à afficher des informations pertinentes à l'Utilisateur et ne constitue pas une décision automatisée produisant des effets juridiques ou affectant significativement l'Utilisateur au sens de l'article 12.1 de la Loi 25.</span></div>
+    <div class="clause"><span class="clause-num">5.2</span><span class="clause-text">L'Utilisateur conserve en tout temps le contrôle de ses listes et de ses choix d'achats. Aucune décision définitive n'est prise de manière exclusivement automatisée sans que l'Utilisateur puisse intervenir.</span></div>
+    <div class="clause"><span class="clause-num">5.3</span><span class="clause-text">Conformément à la Loi 25, l'Utilisateur peut, à tout moment, demander des informations sur le fonctionnement des algorithmes de suggestion en contactant le responsable de la protection des renseignements personnels à <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>.</span></div>
+  </div>
+
+  <!-- Article 6 -->
+  <div class="section">
+    <div class="section-title">6. Stockage, sécurité et transferts hors Québec</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">6.1</span><span class="clause-text">Les renseignements personnels sont stockés sur les serveurs sécurisés de Supabase, situés en Amérique du Nord et en Europe (Amazon Web Services).</span></div>
+    <div class="clause"><span class="clause-num">6.2</span><span class="clause-text">Conformément à l'article 17 de la Loi 25, le Prestataire a procédé à une évaluation des facteurs relatifs à la vie privée (EFVP) pour les transferts de données hors du Québec, notamment vers Supabase (AWS), Google Maps Platform, OpenAI et Anthropic. Ces évaluations confirment que les mesures de protection en place offrent un niveau de protection adéquat et comparable à celui exigé par la Loi 25.</span></div>
+    <h3 class="sub">6.3 Mesures de sécurité techniques</h3>
+    <ul class="list">
+      <li>Chiffrement en transit : toutes les communications utilisent le protocole HTTPS/TLS</li>
+      <li>Mots de passe hachés : les mots de passe ne sont jamais stockés en clair</li>
+      <li>Authentification sécurisée : gérée par Supabase Auth avec jetons JWT</li>
+      <li>Accès restreint : seul le personnel autorisé du Prestataire a accès aux données de production</li>
+    </ul>
+    <div class="clause"><span class="clause-num">6.4</span><span class="clause-text">En cas d'incident de confidentialité impliquant des renseignements personnels, le Prestataire procédera à l'évaluation requise et notifiera, le cas échéant, la Commission d'accès à l'information du Québec et les personnes concernées, conformément à l'article 3.5 de la Loi 25.</span></div>
+  </div>
+
+  <!-- Article 7 -->
+  <div class="section">
+    <div class="section-title">7. Conservation et destruction des renseignements</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">7.1</span><span class="clause-text">Les renseignements personnels sont conservés aussi longtemps que le compte est actif ou que leur conservation est nécessaire aux fins pour lesquelles ils ont été collectés.</span></div>
+    <div class="clause"><span class="clause-num">7.2</span><span class="clause-text">Lors de la suppression du compte, les renseignements personnels identifiants (prénom, nom, photo de profil) sont effacés dans un délai de trente (30) jours. À titre de mesure de prévention des abus, certaines données minimales (identifiant de compte et statut « compte supprimé ») sont conservées afin d'empêcher l'utilisation frauduleuse répétée des périodes d'essai gratuit.</span></div>
+    <div class="clause"><span class="clause-num">7.3</span><span class="clause-text">Les copies de sauvegarde peuvent prendre jusqu'à quatre-vingt-dix (90) jours supplémentaires pour être entièrement purgées des systèmes de sauvegarde.</span></div>
+  </div>
+
+  <!-- Article 8 -->
+  <div class="section">
+    <div class="section-title">8. Droits des personnes concernées</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">8.1</span><span class="clause-text">Conformément à la Loi 25 sur la protection des renseignements personnels dans le secteur privé du Québec, toute personne dont les renseignements sont détenus par le Prestataire bénéficie des droits suivants :</span></div>
+    <div class="rights-grid">
+      <div class="right-card"><div class="right-title">Droit d'accès</div><p>Vous pouvez demander à consulter l'ensemble des renseignements personnels que nous détenons vous concernant.</p></div>
+      <div class="right-card"><div class="right-title">Droit de rectification</div><p>Vous pouvez faire corriger toute information inexacte, incomplète ou équivoque.</p></div>
+      <div class="right-card"><div class="right-title">Droit à l'effacement</div><p>Vous pouvez demander la suppression de vos renseignements personnels, sous réserve des exceptions légales.</p></div>
+      <div class="right-card"><div class="right-title">Droit à la portabilité</div><p>Vous pouvez demander une copie de vos renseignements dans un format technologique structuré et couramment utilisé.</p></div>
+      <div class="right-card"><div class="right-title">Droit au retrait du consentement</div><p>Vous pouvez retirer votre consentement à tout moment, sans effet rétroactif sur les traitements antérieurs.</p></div>
+      <div class="right-card"><div class="right-title">Droit relatif au traitement automatisé</div><p>Vous pouvez demander des informations sur le fonctionnement des systèmes automatisés et formuler des observations (art. 12.1, Loi 25).</p></div>
+      <div class="right-card"><div class="right-title">Droit de déposer une plainte</div><p>Soumettez d'abord une plainte interne à <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>. Si insatisfait(e) : CAI à cai.gouv.qc.ca ou 1 888 528-7741.</p></div>
+    </div>
+    <div class="note" style="margin-top: 14px;"><span class="note-icon">ℹ️</span><p>Pour exercer l'un de ces droits, adressez votre demande écrite à <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>. Nous répondrons dans un délai de trente (30) jours suivant la réception de la demande complète.</p></div>
+  </div>
+
+  <!-- Article 9 -->
+  <div class="section">
+    <div class="section-title">9. Témoins et technologies similaires</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">9.1</span><span class="clause-text">L'Application utilise un stockage local sur l'appareil (AsyncStorage) pour conserver certaines préférences de l'Utilisateur entre les sessions (adresse enregistrée, paramètres d'épiceries, statut de compte). Ces données ne sont pas partagées avec des tiers à des fins publicitaires.</span></div>
+  </div>
+
+  <!-- Article 10 -->
+  <div class="section">
+    <div class="section-title">10. Notifications</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">10.1</span><span class="clause-text">Si l'Utilisateur autorise les notifications, le Prestataire peut lui transmettre des alertes liées au service (nouveaux rabais, rappels, mises à jour importantes). Ces notifications peuvent être désactivées à tout moment depuis les réglages de l'Application ou de l'appareil.</span></div>
+    <div class="clause"><span class="clause-num">10.2</span><span class="clause-text">Le Prestataire ne transmet jamais de notifications à des fins publicitaires tierces sans le consentement explicite de l'Utilisateur.</span></div>
+  </div>
+
+  <!-- Article 11 -->
+  <div class="section">
+    <div class="section-title">11. Personnes mineures</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">11.1</span><span class="clause-text">L'Application est destinée aux personnes âgées de 13 ans et plus. Le Prestataire ne collecte pas sciemment des renseignements personnels d'enfants de moins de 13 ans. Si un parent ou tuteur croit que son enfant nous a fourni des renseignements personnels, il doit nous contacter immédiatement à <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a> afin que nous procédions à leur effacement.</span></div>
+  </div>
+
+  <!-- Article 12 -->
+  <div class="section">
+    <div class="section-title">12. Modifications de la politique</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">12.1</span><span class="clause-text">Le Prestataire peut modifier la présente Politique à tout moment. En cas de modification significative, l'Utilisateur en sera informé via une notification dans l'Application au moins quinze (15) jours avant l'entrée en vigueur des changements.</span></div>
+    <div class="clause"><span class="clause-num">12.2</span><span class="clause-text">L'utilisation continue de l'Application après la date d'entrée en vigueur des modifications constitue l'acceptation de la Politique révisée. La version en vigueur est toujours accessible dans l'Application (Réglages → Politique de confidentialité).</span></div>
+  </div>
+
+  <!-- Article 13 -->
+  <div class="section">
+    <div class="section-title">13. Gestion des renseignements personnels</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">13.1</span><span class="clause-text">Le Prestataire a mis en place des politiques et pratiques encadrant la gestion des renseignements personnels tout au long de leur cycle de vie, incluant : (a) les règles de conservation et de destruction décrites à la section 7 ; (b) les rôles et responsabilités du personnel autorisé en matière de protection des renseignements personnels ; (c) le processus de traitement des plaintes décrit à la section 8. Ces pratiques sont disponibles sur demande en écrivant à <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>.</span></div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <div class="icon">✉️</div>
+    <h3>Responsable de la protection des renseignements personnels</h3>
+    <p>Pour exercer vos droits, poser des questions ou signaler un incident de confidentialité :<br>
+    <a href="mailto:cartly.app@gmail.com"><strong>cartly.app@gmail.com</strong></a><br>
+    Réponse dans les 30 jours suivant réception de la demande complète.</p>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 Cartly. Tous droits réservés. · <a href="conditions-utilisation.html">Conditions d'utilisation</a> · <a href="politique-confidentialite-en.html">English</a></p>
+</footer>
+
+</body>
+</html>

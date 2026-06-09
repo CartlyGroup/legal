@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cartly</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #F2F2F7; color: #1C1C1E; line-height: 1.6; font-size: 15px; }
+    a { color: #F5A833; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { background: #fff; border-bottom: 1px solid #E5E5EA; padding: 16px 24px; display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 20px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px; }
+    .logo span { color: #F5A833; }
+    .lang-switch { margin-left: auto; font-size: 13px; color: #8E8E93; border: 1px solid #E5E5EA; border-radius: 20px; padding: 4px 12px; }
+    .lang-notice { background: #F2F2F7; border: 1px solid #E5E5EA; border-radius: 12px; padding: 12px 16px; font-size: 13px; color: #8E8E93; margin-bottom: 24px; }
+    .wrapper { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+    .doc-header { margin-bottom: 32px; }
+    .doc-badge { display: inline-block; background: #FFF0EC; color: #F5A833; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; border-radius: 20px; padding: 4px 12px; margin-bottom: 12px; }
+    .doc-title { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .doc-subtitle { font-size: 13px; color: #8E8E93; }
+    .intro-card { background: #fff; border: 1px solid #E5E5EA; border-radius: 16px; padding: 24px; margin-bottom: 24px; }
+    .intro-card .label { font-size: 11px; font-weight: 700; color: #8E8E93; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 10px; }
+    .intro-card p { color: #3C3C43; font-size: 14px; line-height: 1.65; }
+    .intro-card p + p { margin-top: 10px; }
+    .section { background: #fff; border: 1px solid #E5E5EA; border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+    .section-title { font-size: 11px; font-weight: 700; color: #F5A833; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px; }
+    .section-divider { height: 1px; background: #E5E5EA; margin-bottom: 18px; }
+    .clause { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
+    .clause-num { font-size: 11px; font-weight: 700; color: #F5A833; min-width: 32px; padding-top: 2px; flex-shrink: 0; }
+    .clause-text { font-size: 14px; color: #3C3C43; line-height: 1.65; }
+    h3.sub { font-size: 13px; font-weight: 700; color: #1C1C1E; margin: 14px 0 8px; }
+    ul.list { list-style: none; padding-left: 0; margin-bottom: 10px; }
+    ul.list li { font-size: 14px; color: #3C3C43; line-height: 1.6; padding: 4px 0 4px 20px; position: relative; }
+    ul.list li::before { content: ''; position: absolute; left: 6px; top: 12px; width: 6px; height: 6px; background: #F5A833; border-radius: 50%; }
+    .note { background: #FFF7ED; border-radius: 10px; padding: 12px 14px; margin: 10px 0; display: flex; gap: 10px; align-items: flex-start; }
+    .note-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .note p { font-size: 13px; color: #1C1C1E; line-height: 1.55; }
+    table.third-party { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+    table.third-party th { background: #F2F2F7; text-align: left; padding: 10px 12px; font-weight: 700; color: #3C3C43; border-bottom: 1px solid #E5E5EA; }
+    table.third-party td { padding: 10px 12px; color: #3C3C43; border-bottom: 1px solid #F2F2F7; vertical-align: top; }
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .right-card { background: #F2F2F7; border-radius: 10px; padding: 14px; }
+    .right-card .right-title { font-size: 13px; font-weight: 700; color: #1C1C1E; margin-bottom: 4px; }
+    .right-card p { font-size: 12px; color: #3C3C43; line-height: 1.5; }
+    .contact-card { background: #fff; border: 1px solid #E5E5EA; border-radius: 16px; padding: 32px 24px; text-align: center; margin-top: 8px; }
+    .contact-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .contact-card p { font-size: 14px; color: #8E8E93; line-height: 1.6; }
+    .site-footer { text-align: center; padding: 24px; font-size: 12px; color: #8E8E93; border-top: 1px solid #E5E5EA; }
+    @media (max-width: 600px) { .doc-title { font-size: 22px; } .section { padding: 18px; } .rights-grid { grid-template-columns: 1fr; } table.third-party { font-size: 12px; } table.third-party th, table.third-party td { padding: 8px; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Cart<span>ly</span></div>
+  <a href="politique-confidentialite.html" class="lang-switch">Français</a>
+</header>
+
+<div class="wrapper">
+  <div class="lang-notice">⚠️ The French version of this policy is authoritative. This English translation is provided for convenience only.</div>
+
+  <div class="doc-header">
+    <div class="doc-badge">Updated: June 9, 2026</div>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <p class="doc-subtitle">Cartly Mobile Application — Compliant with Quebec Law 25 on the Protection of Personal Information and PIPEDA</p>
+  </div>
+
+  <div class="intro-card">
+    <div class="label">Privacy Statement</div>
+    <p>This Privacy Policy (the "Policy") describes the practices of Cartly (the "Application Provider") regarding the collection, use, disclosure, and retention of personal information of users of the Cartly mobile application (the "Application").</p>
+    <p>The Application Provider is committed to protecting personal information in accordance with <strong>Quebec Law 25 on the Protection of Personal Information in the Private Sector</strong> and applicable federal laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+    <p>By using the Application, You consent to the practices described in this Policy.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">1. Identity of the Data Controller</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">1.1</span><span class="clause-text">The data controller responsible for processing personal information is Cartly, operating the Application from Quebec, Canada.</span></div>
+    <div class="clause"><span class="clause-num">1.2</span><span class="clause-text">For any privacy-related question or to exercise your rights, please contact our Privacy Officer at: <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">2. Information Collected</div>
+    <div class="section-divider"></div>
+    <h3 class="sub">2.1 Account information (provided by the User)</h3>
+    <ul class="list"><li>Email address (required for authentication)</li><li>First name and last name</li><li>Profile photo (optional — stored in our secure systems)</li><li>Emoji avatar (optional)</li></ul>
+    <h3 class="sub">2.2 Location information (entered by the User)</h3>
+    <ul class="list"><li>Home address entered manually</li><li>GPS coordinates (latitude/longitude) associated with that address</li><li>Search radius defined by the User (between 1 and 7 km)</li></ul>
+    <div class="note"><span class="note-icon">ℹ️</span><p><strong>Important:</strong> Cartly does not collect the User's GPS location in real time or in the background. The address used is exclusively the one the User enters manually in the settings.</p></div>
+    <h3 class="sub">2.3 Usage data</h3>
+    <ul class="list"><li>Shopping lists created (items, variants, sessions)</li><li>Shopping history</li><li>Selected grocery stores and their active/inactive status</li><li>Account status (trial, free, premium)</li><li>Number of free trials used (for anti-abuse purposes)</li></ul>
+    <h3 class="sub">2.4 Information NOT collected</h3>
+    <ul class="list"><li>Real-time or background GPS location</li><li>Phone contacts</li><li>Browsing data for behavioral advertising purposes</li><li>Credit card or payment information (processed exclusively by Apple App Store or Google Play Store)</li><li>Health or biometric data</li></ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">3. Purposes of Processing</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">3.1</span><span class="clause-text">Personal information is collected and used for the following purposes:</span></div>
+    <ul class="list">
+      <li><strong>Service delivery:</strong> display nearby grocery stores and generate and save the User's shopping lists.</li>
+      <li><strong>Authentication:</strong> verify the User's identity and secure account access.</li>
+      <li><strong>Personalization:</strong> display the User's name, profile photo, and preferences.</li>
+      <li><strong>Product data normalization:</strong> improve the quality and consistency of grocery data displayed in the Application using artificial intelligence services (see section 4.1).</li>
+      <li><strong>Service communications:</strong> send service-related notifications (if enabled by the User).</li>
+      <li><strong>Abuse prevention:</strong> ensure that free trials are not used fraudulently.</li>
+      <li><strong>Application improvement:</strong> analyze usage to improve existing features.</li>
+    </ul>
+    <div class="note"><span class="note-icon">ℹ️</span><p>The Application Provider never uses personal information for third-party advertising purposes and does not sell, rent, or transfer it to third parties for commercial purposes.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">4. Disclosure to Third Parties</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">4.1</span><span class="clause-text">The Application Provider only discloses personal information to the following third parties, to the extent necessary to provide the service:</span></div>
+    <table class="third-party">
+      <thead><tr><th>Third Party</th><th>Purpose</th><th>Data Transmitted</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Supabase</strong></td><td>Authentication, data storage, file hosting</td><td>Account, lists, GPS coordinates</td></tr>
+        <tr><td><strong>Google Maps Platform</strong></td><td>Address search and nearby grocery store detection</td><td>Entered address, GPS coordinates</td></tr>
+        <tr><td><strong>Apple App Store / Google Play</strong></td><td>Premium subscription payment processing</td><td>Information managed directly by the provider</td></tr>
+        <tr><td><strong>OpenAI (API)</strong></td><td>Automated normalization and categorization of grocery product data</td><td>Anonymized product data (names, descriptions, categories) — no User identifying information</td></tr>
+        <tr><td><strong>Anthropic (API)</strong></td><td>Automated normalization and categorization of grocery product data</td><td>Anonymized product data (names, descriptions, categories) — no User identifying information</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:14px"><span class="note-icon">⚠️</span><p><strong>Important:</strong> Data transmitted to artificial intelligence services (OpenAI, Anthropic) is strictly limited to grocery product data. No personally identifiable User information (name, email, address, personal lists) is transmitted to these services.</p></div>
+    <div class="clause" style="margin-top:14px"><span class="clause-num">4.2</span><span class="clause-text">Beyond the third parties listed above, the Application Provider may disclose information: (a) in response to a valid court order; (b) to protect the safety of a User or the public; (c) in the event of a merger or acquisition (the User will be notified in advance).</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">5. Automated Processing</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">5.1</span><span class="clause-text">The Application uses automated algorithms to compare grocery prices and generate shopping list suggestions. This processing is exclusively aimed at displaying relevant information to the User and does not constitute automated decision-making producing legal effects within the meaning of Section 12.1 of Law 25.</span></div>
+    <div class="clause"><span class="clause-num">5.2</span><span class="clause-text">The User retains full control over their lists and purchasing choices at all times. No final decision is made exclusively through automated means without the User being able to intervene.</span></div>
+    <div class="clause"><span class="clause-num">5.3</span><span class="clause-text">The User may at any time request information on the operation of the suggestion algorithms by contacting the Privacy Officer at <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">6. Storage, Security and Cross-Border Transfers</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">6.1</span><span class="clause-text">Personal information is stored on Supabase's secure servers located in North America and Europe (Amazon Web Services).</span></div>
+    <div class="clause"><span class="clause-num">6.2</span><span class="clause-text">In accordance with Section 17 of Law 25, the Application Provider has conducted Privacy Impact Assessments (PIAs) for transfers to Supabase (AWS), Google Maps Platform, OpenAI, and Anthropic. These assessments confirm adequate protection measures are in place.</span></div>
+    <h3 class="sub">6.3 Technical security measures</h3>
+    <ul class="list"><li>Encryption in transit: all communications use HTTPS/TLS</li><li>Hashed passwords: passwords are never stored in plain text</li><li>Secure authentication via Supabase Auth with JWT tokens</li><li>Restricted access to authorized personnel only</li></ul>
+    <div class="clause"><span class="clause-num">6.4</span><span class="clause-text">In the event of a privacy incident, the Application Provider will notify, where applicable, the Commission d'accès à l'information du Québec and affected individuals, in accordance with Section 3.5 of Law 25.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">7. Retention and Destruction</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">7.1</span><span class="clause-text">Personal information is retained for as long as the account is active or as necessary for the purposes for which it was collected.</span></div>
+    <div class="clause"><span class="clause-num">7.2</span><span class="clause-text">Upon account deletion, identifying personal information (first name, last name, profile photo) is erased within thirty (30) days. As an anti-abuse measure, minimal data (account identifier and "deleted account" status) is retained to prevent repeated fraudulent use of free trial periods.</span></div>
+    <div class="clause"><span class="clause-num">7.3</span><span class="clause-text">Backup copies may take up to ninety (90) additional days to be fully purged from backup systems.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">8. Rights of Data Subjects</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">8.1</span><span class="clause-text">In accordance with Quebec Law 25, any person whose information is held by the Application Provider is entitled to the following rights:</span></div>
+    <div class="rights-grid">
+      <div class="right-card"><div class="right-title">Right of Access</div><p>You may request to review all personal information we hold about you.</p></div>
+      <div class="right-card"><div class="right-title">Right of Rectification</div><p>You may have any inaccurate, incomplete, or equivocal information corrected.</p></div>
+      <div class="right-card"><div class="right-title">Right to Erasure</div><p>You may request deletion of your personal information, subject to legal exceptions.</p></div>
+      <div class="right-card"><div class="right-title">Right to Portability</div><p>You may request a copy of your information in a structured, commonly used format.</p></div>
+      <div class="right-card"><div class="right-title">Right to Withdraw Consent</div><p>You may withdraw consent at any time, without retroactive effect on prior processing.</p></div>
+      <div class="right-card"><div class="right-title">Right Re: Automated Processing</div><p>You may request info on automated systems and submit observations (Section 12.1, Law 25).</p></div>
+      <div class="right-card"><div class="right-title">Right to File a Complaint</div><p>First file an internal complaint at <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>. If unsatisfied: CAI at cai.gouv.qc.ca or 1 888 528-7741.</p></div>
+    </div>
+    <div class="note" style="margin-top:14px"><span class="note-icon">ℹ️</span><p>To exercise any of these rights, submit your written request to <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>. We will respond within thirty (30) days.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">9. Cookies and Similar Technologies</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">9.1</span><span class="clause-text">The Application uses local storage on the device (AsyncStorage) to retain certain User preferences between sessions (saved address, grocery store settings, account status). This data is not shared with third parties for advertising purposes.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">10. Push Notifications</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">10.1</span><span class="clause-text">If the User grants notification permissions, the Application Provider may send service-related alerts (new deals, reminders, important updates). Notifications can be disabled at any time from the Application's or device's settings.</span></div>
+    <div class="clause"><span class="clause-num">10.2</span><span class="clause-text">The Application Provider never sends notifications for third-party advertising purposes without the User's explicit consent.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">11. Minors</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">11.1</span><span class="clause-text">The Application is intended for persons 13 years of age and older. The Application Provider does not knowingly collect personal information from children under 13. If a parent or guardian believes their child has provided us with personal information, they must contact us immediately at <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a> so we may delete it.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">12. Policy Changes</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">12.1</span><span class="clause-text">The Application Provider may modify this Policy at any time. In the event of a material change, the User will be notified via an in-app notification at least fifteen (15) days before the changes take effect.</span></div>
+    <div class="clause"><span class="clause-num">12.2</span><span class="clause-text">Continued use of the Application after the effective date constitutes acceptance of the revised Policy. The current version is always accessible within the Application (Settings → Privacy Policy).</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">13. Privacy Governance</div>
+    <div class="section-divider"></div>
+    <div class="clause"><span class="clause-num">13.1</span><span class="clause-text">The Application Provider has established policies and practices governing personal information management throughout its lifecycle, including: (a) the retention and destruction rules described in Section 7; (b) the roles and responsibilities of authorized personnel; (c) the complaint handling process described in Section 8. These practices are available upon request by writing to <a href="mailto:cartly.app@gmail.com">cartly.app@gmail.com</a>.</span></div>
+  </div>
+
+  <div class="contact-card">
+    <div class="icon">✉️</div>
+    <h3>Privacy Officer</h3>
+    <p>To exercise your rights, ask questions, or report a privacy incident:<br>
+    <a href="mailto:cartly.app@gmail.com"><strong>cartly.app@gmail.com</strong></a><br>
+    Response within 30 days of receiving a complete request.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 Cartly. All rights reserved. · <a href="conditions-utilisation-en.html">Terms of Use</a> · <a href="politique-confidentialite.html">Français</a></p>
+</footer>
+
+</body>
+</html>
