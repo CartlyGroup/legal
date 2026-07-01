@@ -4,53 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conditions d'utilisation — Cartly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #F2F2F7; color: #1C1C1E; line-height: 1.6; font-size: 15px; }
-    a { color: #F5A833; text-decoration: none; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F5EDE0; color: #2D1F0E; line-height: 1.6; font-size: 15px; }
+    a { color: #E05252; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .site-header { background: #fff; border-bottom: 1px solid #E5E5EA; padding: 16px 24px; display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 20px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px; }
-    .logo span { color: #F5A833; }
-    .lang-switch { margin-left: auto; font-size: 13px; color: #8E8E93; border: 1px solid #E5E5EA; border-radius: 20px; padding: 4px 12px; }
+    .site-header { background: #fff; border-bottom: 1px solid #E7DCCA; padding: 16px 24px; display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 20px; font-weight: 800; color: #2D1F0E; letter-spacing: -0.5px; }
+    .logo span { color: #E05252; }
+    .brand { display: flex; align-items: center; gap: 9px; }
+    .logo-img { height: 30px; width: auto; display: block; }
+    .lang-switch { margin-left: auto; font-size: 13px; color: #A68B6E; border: 1px solid #E7DCCA; border-radius: 20px; padding: 4px 12px; }
     .wrapper { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
     .doc-header { margin-bottom: 32px; }
-    .doc-badge { display: inline-block; background: #FFF0EC; color: #F5A833; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; border-radius: 20px; padding: 4px 12px; margin-bottom: 12px; }
+    .doc-badge { display: inline-block; background: #FBE9E4; color: #E05252; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; border-radius: 20px; padding: 4px 12px; margin-bottom: 12px; }
     .doc-title { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
-    .doc-subtitle { font-size: 13px; color: #8E8E93; }
+    .doc-subtitle { font-size: 13px; color: #A68B6E; }
     .warning-banner { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 14px; padding: 18px 20px; margin-bottom: 24px; display: flex; gap: 14px; align-items: flex-start; }
     .warning-icon { font-size: 22px; flex-shrink: 0; }
     .warning-banner p { font-size: 14px; color: #991B1B; line-height: 1.6; font-weight: 500; }
-    .intro-card { background: #fff; border: 1px solid #E5E5EA; border-radius: 16px; padding: 24px; margin-bottom: 24px; }
-    .intro-card .cluf-label { font-size: 11px; font-weight: 700; color: #8E8E93; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; }
-    .intro-card p { color: #3C3C43; font-size: 14px; line-height: 1.65; }
-    .intro-card .refus { font-weight: 800; color: #1C1C1E; display: block; margin-top: 14px; font-size: 13px; }
-    .section { background: #fff; border: 1px solid #E5E5EA; border-radius: 16px; padding: 24px; margin-bottom: 16px; }
-    .section-title { font-size: 11px; font-weight: 700; color: #F5A833; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px; }
-    .section-divider { height: 1px; background: #E5E5EA; margin-bottom: 18px; }
+    .intro-card { background: #fff; border: 1px solid #E7DCCA; border-radius: 16px; padding: 24px; margin-bottom: 24px; }
+    .intro-card .cluf-label { font-size: 11px; font-weight: 700; color: #A68B6E; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; }
+    .intro-card p { color: #4B3F2E; font-size: 14px; line-height: 1.65; }
+    .intro-card .refus { font-weight: 800; color: #2D1F0E; display: block; margin-top: 14px; font-size: 13px; }
+    .section { background: #fff; border: 1px solid #E7DCCA; border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+    .section-title { font-size: 11px; font-weight: 700; color: #E05252; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px; }
+    .section-divider { height: 1px; background: #E7DCCA; margin-bottom: 18px; }
     .clause { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
-    .clause-num { font-size: 11px; font-weight: 700; color: #F5A833; min-width: 32px; padding-top: 2px; flex-shrink: 0; }
-    .clause-text { font-size: 14px; color: #3C3C43; line-height: 1.65; }
+    .clause-num { font-size: 11px; font-weight: 700; color: #E05252; min-width: 32px; padding-top: 2px; flex-shrink: 0; }
+    .clause-text { font-size: 14px; color: #4B3F2E; line-height: 1.65; }
     .def-block { margin-bottom: 14px; }
-    .def-term { font-size: 14px; font-weight: 700; color: #1C1C1E; margin-bottom: 3px; }
-    .def-text { font-size: 13px; color: #3C3C43; line-height: 1.6; padding-left: 14px; }
+    .def-term { font-size: 14px; font-weight: 700; color: #2D1F0E; margin-bottom: 3px; }
+    .def-text { font-size: 13px; color: #4B3F2E; line-height: 1.6; padding-left: 14px; }
     .legal-alert { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
     .legal-alert p { font-size: 12px; font-weight: 700; color: #991B1B; letter-spacing: 0.4px; line-height: 1.7; text-transform: uppercase; }
-    .note { background: #FFF7ED; border-radius: 10px; padding: 12px 14px; margin: 10px 0; display: flex; gap: 10px; align-items: flex-start; }
+    .note { background: #FBF1E6; border-radius: 10px; padding: 12px 14px; margin: 10px 0; display: flex; gap: 10px; align-items: flex-start; }
     .note-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-    .note p { font-size: 13px; color: #1C1C1E; line-height: 1.55; }
-    .contact-card { background: #fff; border: 1px solid #E5E5EA; border-radius: 16px; padding: 32px 24px; text-align: center; margin-top: 8px; }
+    .note p { font-size: 13px; color: #2D1F0E; line-height: 1.55; }
+    .contact-card { background: #fff; border: 1px solid #E7DCCA; border-radius: 16px; padding: 32px 24px; text-align: center; margin-top: 8px; }
     .contact-card .icon { font-size: 32px; margin-bottom: 12px; }
     .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-    .contact-card p { font-size: 14px; color: #8E8E93; line-height: 1.6; }
-    .site-footer { text-align: center; padding: 24px; font-size: 12px; color: #8E8E93; border-top: 1px solid #E5E5EA; }
+    .contact-card p { font-size: 14px; color: #A68B6E; line-height: 1.6; }
+    .site-footer { text-align: center; padding: 24px; font-size: 12px; color: #A68B6E; border-top: 1px solid #E7DCCA; }
     @media (max-width: 600px) { .doc-title { font-size: 22px; } .section { padding: 18px; } }
   </style>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="logo">Cart<span>ly</span></div>
+  <div class="brand"><img src="logo.png" alt="Cartly" class="logo-img"><span class="logo">Cart<span>ly</span></span></div>
   <a href="conditions-utilisation-en.html" class="lang-switch">English</a>
 </header>
 

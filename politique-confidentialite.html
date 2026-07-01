@@ -4,20 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Politique de confidentialité — Cartly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #F2F2F7;
-      color: #1C1C1E;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F5EDE0;
+      color: #2D1F0E;
       line-height: 1.6;
       font-size: 15px;
     }
-    a { color: #F5A833; text-decoration: none; }
+    a { color: #E05252; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .site-header {
       background: #fff;
-      border-bottom: 1px solid #E5E5EA;
+      border-bottom: 1px solid #E7DCCA;
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -26,13 +29,15 @@
       top: 0;
       z-index: 100;
     }
-    .logo { font-size: 20px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px; }
-    .logo span { color: #F5A833; }
+    .logo { font-size: 20px; font-weight: 800; color: #2D1F0E; letter-spacing: -0.5px; }
+    .logo span { color: #E05252; }
+    .brand { display: flex; align-items: center; gap: 9px; }
+    .logo-img { height: 30px; width: auto; display: block; }
     .lang-switch {
       margin-left: auto;
       font-size: 13px;
-      color: #8E8E93;
-      border: 1px solid #E5E5EA;
+      color: #A68B6E;
+      border: 1px solid #E7DCCA;
       border-radius: 20px;
       padding: 4px 12px;
     }
@@ -40,8 +45,8 @@
     .doc-header { margin-bottom: 32px; }
     .doc-badge {
       display: inline-block;
-      background: #FFF0EC;
-      color: #F5A833;
+      background: #FBE9E4;
+      color: #E05252;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.8px;
@@ -51,81 +56,81 @@
       margin-bottom: 12px;
     }
     .doc-title { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
-    .doc-subtitle { font-size: 13px; color: #8E8E93; }
+    .doc-subtitle { font-size: 13px; color: #A68B6E; }
     .intro-card {
       background: #fff;
-      border: 1px solid #E5E5EA;
+      border: 1px solid #E7DCCA;
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 24px;
     }
     .intro-card .label {
-      font-size: 11px; font-weight: 700; color: #8E8E93;
+      font-size: 11px; font-weight: 700; color: #A68B6E;
       letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 10px;
     }
-    .intro-card p { color: #3C3C43; font-size: 14px; line-height: 1.65; }
+    .intro-card p { color: #4B3F2E; font-size: 14px; line-height: 1.65; }
     .intro-card p + p { margin-top: 10px; }
     .section {
       background: #fff;
-      border: 1px solid #E5E5EA;
+      border: 1px solid #E7DCCA;
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 16px;
     }
     .section-title {
-      font-size: 11px; font-weight: 700; color: #F5A833;
+      font-size: 11px; font-weight: 700; color: #E05252;
       letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px;
     }
-    .section-divider { height: 1px; background: #E5E5EA; margin-bottom: 18px; }
+    .section-divider { height: 1px; background: #E7DCCA; margin-bottom: 18px; }
     .clause { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
-    .clause-num { font-size: 11px; font-weight: 700; color: #F5A833; min-width: 32px; padding-top: 2px; flex-shrink: 0; }
-    .clause-text { font-size: 14px; color: #3C3C43; line-height: 1.65; }
-    h3.sub { font-size: 13px; font-weight: 700; color: #1C1C1E; margin: 14px 0 8px; }
+    .clause-num { font-size: 11px; font-weight: 700; color: #E05252; min-width: 32px; padding-top: 2px; flex-shrink: 0; }
+    .clause-text { font-size: 14px; color: #4B3F2E; line-height: 1.65; }
+    h3.sub { font-size: 13px; font-weight: 700; color: #2D1F0E; margin: 14px 0 8px; }
     ul.list { list-style: none; padding-left: 0; margin-bottom: 10px; }
     ul.list li {
-      font-size: 14px; color: #3C3C43; line-height: 1.6;
+      font-size: 14px; color: #4B3F2E; line-height: 1.6;
       padding: 4px 0 4px 20px; position: relative;
     }
     ul.list li::before {
       content: ''; position: absolute; left: 6px; top: 12px;
-      width: 6px; height: 6px; background: #F5A833; border-radius: 50%;
+      width: 6px; height: 6px; background: #E05252; border-radius: 50%;
     }
     .note {
-      background: #FFF7ED; border-radius: 10px;
+      background: #FBF1E6; border-radius: 10px;
       padding: 12px 14px; margin: 10px 0;
       display: flex; gap: 10px; align-items: flex-start;
     }
     .note-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-    .note p { font-size: 13px; color: #1C1C1E; line-height: 1.55; }
+    .note p { font-size: 13px; color: #2D1F0E; line-height: 1.55; }
     table.third-party {
       width: 100%; border-collapse: collapse;
       font-size: 13px; margin-top: 10px;
     }
     table.third-party th {
-      background: #F2F2F7; text-align: left;
-      padding: 10px 12px; font-weight: 700; color: #3C3C43;
-      border-bottom: 1px solid #E5E5EA;
+      background: #F5EDE0; text-align: left;
+      padding: 10px 12px; font-weight: 700; color: #4B3F2E;
+      border-bottom: 1px solid #E7DCCA;
     }
     table.third-party td {
-      padding: 10px 12px; color: #3C3C43;
-      border-bottom: 1px solid #F2F2F7; vertical-align: top;
+      padding: 10px 12px; color: #4B3F2E;
+      border-bottom: 1px solid #F5EDE0; vertical-align: top;
     }
     .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
-    .right-card { background: #F2F2F7; border-radius: 10px; padding: 14px; }
-    .right-card .right-title { font-size: 13px; font-weight: 700; color: #1C1C1E; margin-bottom: 4px; }
-    .right-card p { font-size: 12px; color: #3C3C43; line-height: 1.5; }
+    .right-card { background: #F5EDE0; border-radius: 10px; padding: 14px; }
+    .right-card .right-title { font-size: 13px; font-weight: 700; color: #2D1F0E; margin-bottom: 4px; }
+    .right-card p { font-size: 12px; color: #4B3F2E; line-height: 1.5; }
     .contact-card {
-      background: #fff; border: 1px solid #E5E5EA;
+      background: #fff; border: 1px solid #E7DCCA;
       border-radius: 16px; padding: 32px 24px;
       text-align: center; margin-top: 8px;
     }
     .contact-card .icon { font-size: 32px; margin-bottom: 12px; }
     .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-    .contact-card p { font-size: 14px; color: #8E8E93; line-height: 1.6; }
+    .contact-card p { font-size: 14px; color: #A68B6E; line-height: 1.6; }
     .site-footer {
       text-align: center; padding: 24px;
-      font-size: 12px; color: #8E8E93;
-      border-top: 1px solid #E5E5EA;
+      font-size: 12px; color: #A68B6E;
+      border-top: 1px solid #E7DCCA;
     }
     @media (max-width: 600px) {
       .doc-title { font-size: 22px; }
@@ -139,7 +144,7 @@
 <body>
 
 <header class="site-header">
-  <div class="logo">Cart<span>ly</span></div>
+  <div class="brand"><img src="logo.png" alt="Cartly" class="logo-img"><span class="logo">Cart<span>ly</span></span></div>
   <a href="politique-confidentialite-en.html" class="lang-switch">English</a>
 </header>
 
