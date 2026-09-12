@@ -2,7 +2,7 @@
 <!--
   PAGE D'ATTERRISSAGE DES LIENS DE COURRIEL.
 
-  À déposer dans le dépôt public CartlyGroup/legal, à côté des pages légales. Elle sera servie à
+  À déposer dans le dépôt public CartlyGroup/legal, à côté des pages légales. Elle est servie à
   https://cartlygroup.github.io/legal/courriel-confirme.html
 
   POURQUOI ELLE EXISTE. Les liens pointaient directement sur `cartly://`. Sur un téléphone c'est
@@ -12,9 +12,9 @@
 
   LE PIÈGE, ET C'EST TOUT L'ENJEU DE CE FICHIER. Supabase place les jetons de session dans le
   FRAGMENT de l'URL (#access_token=…&refresh_token=…&type=signup). Le fragment n'est jamais envoyé
-  au serveur : il ne vit que dans le navigateur. Cette page doit donc le réexpédier telle quelle
-  vers cartly://, sinon l'app s'ouvre sans jetons et l'entrée directe est perdue — exactement ce
-  qu'on venait de gagner. C'est `extraireLienCourriel` (App.js) qui les relit à l'arrivée.
+  au serveur : il ne vit que dans le navigateur. Cette page doit donc le réexpédier tel quel vers
+  cartly://, sinon l'app s'ouvre sans jetons et l'entrée directe est perdue — exactement ce qu'on
+  venait de gagner. C'est `extraireLienCourriel` (App.js) qui les relit à l'arrivée.
 
   On n'ouvre l'app AUTOMATIQUEMENT que sur mobile : déclencher cartly:// sur un ordinateur ne
   produirait qu'une boîte de dialogue d'erreur, juste après avoir annoncé que tout allait bien.
@@ -24,7 +24,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Adresse confirmée — Cartly</title>
+<title>Cartly</title>
+<link rel="icon" href="logo.png">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -36,45 +37,43 @@
     color: #2D1F0E;
   }
   .carte {
-    width: 100%; max-width: 460px; background: #FFFFFF;
-    border-radius: 20px; padding: 36px 28px; text-align: center;
+    width: 100%; max-width: 440px; background: #FFFFFF;
+    border-radius: 20px; padding: 38px 30px;
     box-shadow: 0 12px 32px rgba(45, 31, 14, .08);
   }
-  .pastille {
-    width: 68px; height: 68px; margin: 0 auto 20px; border-radius: 50%;
-    background: #F5EDE0; display: flex; align-items: center; justify-content: center;
-    font-size: 32px;
-  }
-  h1 { margin: 0 0 10px; font-size: 23px; font-weight: 800; line-height: 1.25; }
-  p  { margin: 0 0 20px; font-size: 15px; line-height: 1.5; color: #5B4A35; }
+  .logo { display: block; width: 64px; height: auto; margin: 0 0 24px; }
+  h1 { margin: 0 0 8px; font-size: 24px; font-weight: 800; line-height: 1.2; letter-spacing: -.3px; }
+  p  { margin: 0; font-size: 15px; line-height: 1.55; color: #5B4A35; }
   .bouton {
-    display: inline-block; background: #E05252; color: #FFFFFF; text-decoration: none;
+    display: inline-block; margin: 26px 0 0;
+    background: #E05252; color: #FFFFFF; text-decoration: none;
     font-size: 16px; font-weight: 700; padding: 15px 30px; border-radius: 13px;
-    border: 0; cursor: pointer; font-family: inherit;
   }
   .bouton:active { opacity: .85; }
-  .note { margin: 22px 0 0; font-size: 13px; line-height: 1.5; color: #A68B6E; }
-  .pied { margin: 18px 0 0; font-size: 12px; color: #A68B6E; }
+  .note { margin: 20px 0 0; font-size: 13px; line-height: 1.5; color: #A68B6E; }
+  .pied {
+    margin: 26px 0 0; padding-top: 18px; border-top: 1px solid #F0E6D8;
+    font-size: 12.5px; color: #A68B6E;
+  }
   [hidden] { display: none !important; }
 </style>
 </head>
 <body>
   <main class="carte">
-    <div class="pastille" id="icone">✅</div>
-    <h1 id="titre">Ton adresse est confirmée</h1>
-    <p id="message">On ouvre Cartly…</p>
+    <img class="logo" src="logo.png" alt="Cartly">
+    <h1 id="titre">On vérifie ton lien…</h1>
+    <p id="message"></p>
 
     <a class="bouton" id="ouvrir" href="#" hidden>Ouvrir Cartly</a>
-
     <p class="note" id="note" hidden></p>
-    <p class="pied">Cartly — comparer les circulaires, payer moins cher.</p>
+
+    <p class="pied">Cartly — Ton épicerie, au meilleur prix.</p>
   </main>
 
 <script>
 (function () {
   var titre   = document.getElementById('titre');
   var message = document.getElementById('message');
-  var icone   = document.getElementById('icone');
   var bouton  = document.getElementById('ouvrir');
   var note    = document.getElementById('note');
 
@@ -88,41 +87,49 @@
   var lien = 'cartly://' + fragment;
   bouton.href = lien;
 
-  // Un téléphone peut ouvrir cartly://. Un ordinateur non : lui proposer ne ferait qu'afficher
-  // une erreur système juste après lui avoir dit que tout était correct.
+  // Un téléphone peut ouvrir cartly://. Un ordinateur non : le lui proposer n'afficherait qu'une
+  // erreur système, juste après lui avoir dit que tout était correct.
   var surMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+  function poser(t, m, noteTexte, avecBouton) {
+    titre.textContent = t;
+    message.textContent = m;
+    if (noteTexte) { note.textContent = noteTexte; note.hidden = false; }
+    if (avecBouton) bouton.hidden = false;
+  }
+
   if (!aJetons) {
-    // Page ouverte à la main, ou lien déjà consommé (certains antivirus de messagerie
-    // pré-chargent les liens pour les analyser, ce qui brûle un lien à usage unique).
-    icone.textContent = '📬';
-    titre.textContent = 'Rien à confirmer ici';
-    message.textContent = 'Ce lien a déjà servi, ou il est incomplet. Si ton compte n’est pas encore actif, demande un nouveau courriel depuis l’application.';
+    // Page ouverte à la main, ou lien déjà consommé — certains antivirus de messagerie
+    // pré-chargent les liens pour les analyser, ce qui brûle un lien à usage unique.
+    poser(
+      'Ce lien a déjà servi',
+      'Ton compte est peut-être déjà actif : essaie de te connecter. Sinon, demande un nouveau courriel depuis l’application.'
+    );
     return;
   }
 
   if (type === 'recovery') {
-    titre.textContent = 'Choisis ton nouveau mot de passe';
-    icone.textContent = '🔑';
+    if (surMobile) {
+      poser('On ouvre Cartly', 'Tu pourras choisir ton nouveau mot de passe.',
+            'Rien ne se passe ? Touche le bouton.', true);
+      setTimeout(function () { window.location.href = lien; }, 700);
+    } else {
+      poser('Ton lien est valide',
+            'Ouvre-le depuis ton téléphone pour choisir ton nouveau mot de passe.',
+            'Tu as ouvert ce lien sur un ordinateur — Cartly vit sur ton téléphone.');
+    }
+    return;
   }
 
   if (surMobile) {
-    message.textContent = type === 'recovery'
-      ? 'On ouvre Cartly pour que tu choisisses ton mot de passe…'
-      : 'On ouvre Cartly…';
-    bouton.hidden = false;
-    note.textContent = 'Rien ne se passe ? Touche le bouton.';
-    note.hidden = false;
-    // Laisse le temps à la page de s'afficher : une redirection instantanée donne
-    // l'impression que le lien n'a pas fonctionné.
+    poser('C’est confirmé', 'On ouvre Cartly…', 'Rien ne se passe ? Touche le bouton.', true);
+    // Laisse le temps à la page de s'afficher : une redirection instantanée donne l'impression
+    // que le lien n'a pas fonctionné.
     setTimeout(function () { window.location.href = lien; }, 700);
   } else {
-    // Ordinateur : on ne tente rien, on explique.
-    message.textContent = type === 'recovery'
-      ? 'Ton lien est valide. Ouvre-le depuis ton téléphone pour choisir ton mot de passe dans l’application.'
-      : 'Ton compte est prêt. Retourne sur ton téléphone et ouvre Cartly — tu peux te connecter.';
-    note.textContent = 'Tu as ouvert ce lien sur un ordinateur. L’application Cartly vit sur ton téléphone.';
-    note.hidden = false;
+    poser('Ton compte est prêt',
+          'Retourne sur ton téléphone et ouvre Cartly. Tu peux te connecter.',
+          'Tu as ouvert ce lien sur un ordinateur — Cartly vit sur ton téléphone.');
   }
 })();
 </script>
