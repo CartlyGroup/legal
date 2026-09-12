@@ -88,6 +88,8 @@
   var params   = new URLSearchParams(fragment.replace(/^#/, ''));
   var type     = params.get('type');
   var aJetons  = !!(params.get('access_token') && params.get('refresh_token'));
+  // Supabase renvoie l'échec DANS le fragment, pas par un code HTTP : la redirection reste un 303.
+  var erreur   = params.get('error_code') || params.get('error');
 
   var lien = 'cartly://' + fragment;
   bouton.href = lien;
@@ -103,12 +105,13 @@
     if (avecBouton) bouton.hidden = false;
   }
 
-  if (!aJetons) {
-    // Page ouverte à la main, ou lien déjà consommé : certains antivirus de messagerie
-    // pré-chargent les liens pour les analyser, ce qui brûle un lien à usage unique.
+  if (erreur || !aJetons) {
+    // Lien déjà consommé, expiré, ou page ouverte à la main. Un lien de courriel ne sert QU'UNE
+    // fois : certains antivirus de messagerie les pré-chargent pour les analyser, ce qui suffit
+    // à les brûler avant même que la personne ne clique.
     poser(
-      'Ce lien a déjà servi',
-      'Ton compte est peut-être déjà actif : essaie de te connecter. Sinon, demande un nouveau courriel depuis l’application.'
+      'Ce lien n’est plus valide',
+      'Il a déjà servi, ou il a expiré. Ton compte est peut-être déjà actif : essaie de te connecter. Sinon, demande un nouveau courriel depuis l’application.'
     );
     return;
   }
@@ -119,9 +122,17 @@
             'Rien ne se passe ? Touche le bouton.', true);
       setTimeout(function () { window.location.href = lien; }, 700);
     } else {
-      poser('Ton lien est valide',
-            'Ouvre-le depuis ton téléphone pour choisir ton nouveau mot de passe.',
-            'Tu as ouvert ce lien sur un ordinateur. Cartly vit sur ton téléphone.');
+      // ON NE PEUT PAS RENVOYER AU TÉLÉPHONE ICI, ET C'EST LA DIFFÉRENCE AVEC L'INSCRIPTION.
+      //
+      // Un lien de confirmation d'inscription FAIT le travail en étant ouvert : le compte est
+      // confirmé côté serveur, peu importe l'appareil. Un lien de mot de passe, lui, ne donne
+      // qu'une session temporaire qui doit atteindre l'app — et il est à usage unique. L'ouvrir
+      // sur un ordinateur le consomme donc sans rien accomplir.
+      //
+      // Dire « ouvre-le depuis ton téléphone » serait faux : il ne fonctionnera plus.
+      poser('Ce lien vient d’être utilisé ici',
+            'Un lien de mot de passe ne sert qu’une fois, et il doit être ouvert sur le téléphone où Cartly est installé.',
+            'Reprends depuis ton téléphone : ouvre Cartly, touche « Mot de passe oublié ? », et suis le nouveau lien directement depuis l’appareil.');
     }
     return;
   }
