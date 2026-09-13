@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+  « OUVRIR CARTLY » — la destination des boutons dans les courriels promotionnels.
+
+  À déposer dans le dépôt public CartlyGroup/legal, à côté de courriel-confirme.html et de
+  logo-cartly.png. Elle est servie à https://cartlygroup.github.io/legal/ouvrir.html
+
+  POURQUOI ELLE EXISTE. Un bouton qui pointe droit sur `cartly://` marche depuis un téléphone et
+  casse depuis un ordinateur — le navigateur ne connaît pas ce schéma et affiche une erreur. Comme
+  un courriel promotionnel se lit souvent au bureau, la moitié des clics tomberaient à plat, et ce,
+  dans CHAQUE envoi.
+
+  La fiche App Store ferait mieux l'affaire, mais elle n'existera qu'à la sortie publique. En
+  attendant, cette page tient le rôle : elle ouvre l'app sur mobile et explique sur ordinateur.
+  Le jour où l'app est publiée, il suffira de faire pointer LIEN_APP_STORE ici.
+
+  Aucun jeton ne transite par cette page — contrairement à courriel-confirme.html, elle ne porte
+  aucune session. C'est une simple porte.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cartly</title>
+<link rel="icon" href="logo-cartly.png">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px 16px; background: #F5EDE0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #2D1F0E;
+  }
+  .carte {
+    width: 100%; max-width: 440px; background: #FFFFFF;
+    border-radius: 20px; padding: 40px 30px;
+    box-shadow: 0 12px 32px rgba(45, 31, 14, .08);
+    text-align: center;
+  }
+  .logo { display: block; width: 76px; height: auto; margin: 0 auto 24px; }
+  h1 { margin: 0 0 10px; font-size: 24px; font-weight: 800; line-height: 1.2; letter-spacing: -.3px; }
+  p  { margin: 0; font-size: 15px; line-height: 1.55; color: #5B4A35; }
+  .bouton {
+    display: inline-block; margin: 26px 0 0;
+    background: #E05252; color: #FFFFFF; text-decoration: none;
+    font-size: 16px; font-weight: 700; padding: 15px 32px; border-radius: 13px;
+  }
+  .bouton:active { opacity: .85; }
+  .note { margin: 20px 0 0; font-size: 13px; line-height: 1.5; color: #A68B6E; }
+  .pied {
+    margin: 28px 0 0; padding-top: 20px; border-top: 1px solid #F0E6D8;
+    font-size: 12.5px; line-height: 1.6; color: #A68B6E;
+  }
+  .pied strong { display: block; color: #8A7259; font-weight: 700; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+  <main class="carte">
+    <img class="logo" src="logo-cartly.png" alt="Cartly">
+    <h1 id="titre">On ouvre Cartly…</h1>
+    <p id="message"></p>
+    <a class="bouton" id="ouvrir" href="cartly://" hidden>Ouvrir Cartly</a>
+    <p class="note" id="note" hidden></p>
+    <p class="pied">
+      <strong>Cartly</strong>
+      Ton épicerie, au meilleur prix.
+    </p>
+  </main>
+
+<script>
+(function () {
+  var titre = document.getElementById('titre');
+  var message = document.getElementById('message');
+  var bouton = document.getElementById('ouvrir');
+  var note = document.getElementById('note');
+
+  var surMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (surMobile) {
+    message.textContent = 'Tes rabais de la semaine t’attendent.';
+    bouton.hidden = false;
+    note.textContent = 'Rien ne se passe ? Touche le bouton.';
+    note.hidden = false;
+    // Un court délai : une redirection instantanée donne l'impression que le lien a raté.
+    setTimeout(function () { window.location.href = 'cartly://'; }, 700);
+  } else {
+    titre.textContent = 'Cartly vit sur ton téléphone';
+    message.textContent = 'Ouvre l’application depuis ton téléphone pour voir les rabais de la semaine près de chez toi.';
+  }
+})();
+</script>
+</body>
+</html>
